@@ -45,14 +45,9 @@
   .CodeMirror-foldmarker {
     color: lighten($bgColor, 20%);
     text-shadow: 0 0 rgba(0, 0, 0, 0);
-    background: lighten($bgColor, 3%);
-    border-radius: 0.25em;
-    line-height: 0.125em;
-    height: 0.625em;
-    margin-top: 0.3125em;
+    background: transparent;
     margin-left: 0.3125em;
-    display: inline-block;
-    vertical-align: top;
+    display: inline;
   }
 
   .CodeMirror-guttermarker-subtle,
