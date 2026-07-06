@@ -126,6 +126,7 @@ Optional arguments:
       webPreferences: {
         blinkFeatures: 'OverlayScrollbars',
         nodeIntegration: true,
+        contextIsolation: false,
       },
     };
 
@@ -165,8 +166,6 @@ Optional arguments:
     const dispatchShortcutEvent = ev => {
       mainWindow.webContents.send('executeShortCut', ev);
     };
-
-    mainWindow.webContents.setVisualZoomLevelLimits(1, 1);
 
     const registerShortcuts = () => {
       gsc.register('CmdOrCtrl+0', () => {
