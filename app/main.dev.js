@@ -133,7 +133,7 @@ Optional arguments:
 
     if (process.platform === 'darwin') {
       ipc.on('setVibrancy', (event, lightTheme) => {
-        mainWindow.setVibrancy(lightTheme ? 'medium-light' : 'ultra-dark');
+        mainWindow.setVibrancy(lightTheme ? 'light' : 'dark');
       });
       windowSettings.backgroundColor = currentLightTheme ? '#00ffffff' : '#00002b36';
     } else {
@@ -145,7 +145,7 @@ Optional arguments:
     mainWindow.loadURL(`file://${__dirname}/app.html`);
 
     mainWindow.on('ready-to-show', () => {
-      mainWindow.setVibrancy(currentLightTheme ? 'medium-light' : 'ultra-dark');
+      mainWindow.setVibrancy(currentLightTheme ? 'light' : 'dark');
       mainWindow.show();
       // Restore maximised state if it is set. not possible via options so we do it here
       if (windowState.isMaximized) {
