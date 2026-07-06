@@ -8,6 +8,7 @@ import compareVersions from 'compare-versions';
 import minimist from 'minimist';
 
 const APPVERSION = require('./package.json').version;
+require('@electron/remote/main').initialize();
 
 const { app, BrowserWindow, ipcMain: ipc, Menu: menu, globalShortcut: gsc, shell } = electron;
 const isDev = process.env.NODE_ENV === 'development';
@@ -140,6 +141,7 @@ Optional arguments:
     }
 
     mainWindow = new BrowserWindow(windowSettings);
+    require('@electron/remote/main').enable(mainWindow.webContents);
     mainWindow.loadURL(`file://${__dirname}/app.html`);
 
     mainWindow.on('ready-to-show', () => {
